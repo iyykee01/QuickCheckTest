@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Text, View } from "react-native";
 import { CustomeButton } from "../components/Buttons/CustomButton";
-import CustomeInput from "../components/TextInputs/CustomeInput";
+import { CustomeInput } from "../components/TextInputs/CustomeInput";
 
 export const LoginScreen = () => {
   const [email, setEmail] = useState("");
@@ -23,8 +23,16 @@ export const LoginScreen = () => {
         Please Login in to continue the experience
       </Text>
 
-      <CustomeInput placeholder="Email" setText={setEmail} />
-      <CustomeInput placeholder="Password" setText={setPassword} />
+      <CustomeInput
+        placeholder="Email"
+        setText={setEmail}
+        secureTextEntry={false}
+      />
+      <CustomeInput
+        placeholder="Password"
+        setText={setPassword}
+        secureTextEntry
+      />
       <CustomeButton
         title="Proceed"
         onPress={loginHanlder}
